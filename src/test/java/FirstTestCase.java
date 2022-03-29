@@ -22,14 +22,16 @@ public class FirstTestCase extends BaseTest {
                 selectProduct(2).
                 isOnProductDetailPage().
                 clickAddToCartButton().
-                clickgoToCartButton();
+                clickGoToCartButton();
 
 
         CartPage cartPage = new CartPage(driver);
         cartPage.
-                isOnCartPage().
-                selectQuantity().
+                isOnCartPage();
+        Assert.assertTrue(cartPage.isCartCountUp(),"Ürün miktarı artmadı!");
+                cartPage.selectQuantity().
                 goToHomepage();
+
     }
 
 
