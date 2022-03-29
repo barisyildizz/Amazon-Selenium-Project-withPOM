@@ -12,9 +12,20 @@ public class CartPage extends BasePage {
     protected By miktarSecLocator = By.cssSelector("div[id='a-popover-1'] li:nth-child(4)");
     protected By alisverisSepetiLocator = By.cssSelector("div[class='a-row'] h1");
     protected By anasayfaLocator = By.cssSelector("#nav-logo-sprites");
+    protected By cartCountLocator = By.cssSelector("#nav-cart-count");
+
 
     public CartPage(WebDriver driver) {
         super(driver);
+    }
+
+    public int getCartCount(){
+        String  a = driver.findElement(cartCountLocator).getText();
+        return Integer.parseInt(a);
+    }
+
+    public boolean isCartCountUp(){
+        return getCartCount() > 0;
     }
 
     public CartPage selectQuantity(){
@@ -33,4 +44,6 @@ public class CartPage extends BasePage {
         Assert.assertEquals(e,"Alışveriş Sepeti");
         return this;
     }
+
+
 }
