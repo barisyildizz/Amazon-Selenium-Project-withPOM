@@ -7,7 +7,7 @@ TestNG, Page Object Model ve Java kullanılarak yazılan Amazon Selenium Otomasy
 <ul>2- Anasayfa'da olup olmadığınızı doğrulayın.</ul> 
 <ul>3- Arama textboxına "macbook" yazın ve arama butonuna tıklayın.</ul> 
 <ul>5- Çıkan ürün listesinden 3. ürünü seçin.</ul> 
-<ul>6- Ürüne detay sayfasının açıldığını doğrulayın.</ul> 
+<ul>6- Ürün detay sayfasının açıldığını doğrulayın.</ul> 
 <ul>10- Ürünü sepete ekleyin.</ul> 
 <ul>11- Sepete gidin.</ul> 
 <ul>12- Sepet sayfasında olduğunuzu doğrulayın.</ul> 
