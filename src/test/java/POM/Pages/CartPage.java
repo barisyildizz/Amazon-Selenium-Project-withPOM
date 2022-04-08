@@ -31,7 +31,7 @@ public class CartPage extends BasePage {
 
 
     public CartPage isCartandQuantityCountUp() {
-        Assert.assertEquals(getCartCount(),getMiktarCount(),"Ürün miktarı artmadı!");
+        Assert.assertEquals(getCartCount(),getMiktarCount(),"Seçilen miktar ile sepetteki miktar aynı değil!");
         return this;
     }
 
