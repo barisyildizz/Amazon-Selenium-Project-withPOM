@@ -8,8 +8,8 @@ import org.testng.Assert;
 
 public class CartPage extends BasePage {
 
-    protected By miktarLocator = By.cssSelector("#a-autoid-0-announce");
-    protected By miktarSecLocator = By.cssSelector("div[id='a-popover-1'] li:nth-child(4)");
+    protected By miktarLocator = By.cssSelector(".a-dropdown-prompt");
+    protected By miktarSecLocator = By.xpath("//a[@id='quantity_2']");
     protected By alisverisSepetiLocator = By.cssSelector("div[class='a-row'] h1");
     protected By anasayfaLocator = By.cssSelector("#nav-logo-sprites");
     protected By cartCountLocator = By.cssSelector("#nav-cart-count");
@@ -20,17 +20,26 @@ public class CartPage extends BasePage {
     }
 
     public int getCartCount(){
-        String  a = driver.findElement(cartCountLocator).getText();
+        String  a = wait.until(ExpectedConditions.visibilityOfElementLocated(cartCountLocator)).getText();
         return Integer.parseInt(a);
     }
 
-    public boolean isCartCountUp(){
-        return getCartCount() > 0;
+    public int getMiktarCount() {
+        String count = wait.until(ExpectedConditions.visibilityOfElementLocated(miktarLocator)).getText();
+        return Integer.parseInt(count);
     }
 
-    public CartPage selectQuantity(){
+
+    public CartPage isCartandQuantityCountUp() {
+        Assert.assertEquals(getCartCount(),getMiktarCount(),"Ürün miktarı artmadı!");
+        return this;
+    }
+
+
+    public CartPage selectQuantity() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(miktarLocator)).click();
         wait.until(ExpectedConditions.elementToBeClickable(miktarSecLocator)).click();
+        Thread.sleep(1000);
         return this;
     }
 
