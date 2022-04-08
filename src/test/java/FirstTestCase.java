@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class FirstTestCase extends BaseTest {
 
     @Test
-    public void guestCheckOut(){
+    public void guestCheckOut() throws InterruptedException {
 
         HomePage homePage = new HomePage(driver);
         homePage.
@@ -27,12 +27,9 @@ public class FirstTestCase extends BaseTest {
 
         CartPage cartPage = new CartPage(driver);
         cartPage.
-                isOnCartPage();
-        Assert.assertTrue(cartPage.isCartCountUp(),"Ürün miktarı artmadı!");
-                cartPage.selectQuantity().
+                isOnCartPage().
+                selectQuantity().
+                isCartandQuantityCountUp().
                 goToHomepage();
-
     }
-
-
 }
