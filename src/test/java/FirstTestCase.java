@@ -15,7 +15,7 @@ public class FirstTestCase extends BaseTest {
                 load().
                 acceptCookies().
                 isOnHomePage().
-                enterTextinSearchBox("laptop").
+                enterTextinSearchBox("macbook").
                 clickSearchButton();
 
         ProductPage productPage = new ProductPage(driver).
