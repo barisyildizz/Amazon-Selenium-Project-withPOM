@@ -12,7 +12,6 @@ public class HomePage extends BasePage {
     private By cookieLocator = By.id("sp-cc-accept");
     private By textBoxLocator = By.id("twotabsearchtextbox");
     private By searchButtonLocator = By.id("nav-search-submit-button");
-    private By sonuclarLocator = By.cssSelector(".a-size-medium-plus.a-color-base.a-text-normal");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -41,8 +40,8 @@ public class HomePage extends BasePage {
     }
 
     public HomePage isOnHomePage(){
-       String e =  wait.until(ExpectedConditions.visibilityOfElementLocated(sonuclarLocator)).getText();
-        Assert.assertEquals(e,"SONUÇLAR");
+       String e =  driver.getTitle();
+        Assert.assertEquals(e,"Amazon.com.tr: Elektronik, bilgisayar, akıllı telefon, kitap, oyuncak, yapı market, ev, mutfak, oyun konsolları ürünleri ve daha fazlası için internet alışveriş sitesi");
         return this;
     }
 
