@@ -43,7 +43,7 @@ public class ProductPage extends BasePage {
         return this;
     }
 
-    public ProductPage clickgoToCartButton(){
+    public ProductPage clickGoToCartButton(){
         wait.until(ExpectedConditions.elementToBeClickable(goToCartButtonLocator)).click();
         return this;
     }
